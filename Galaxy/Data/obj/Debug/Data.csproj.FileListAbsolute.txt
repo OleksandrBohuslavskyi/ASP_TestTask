@@ -1,0 +1,10 @@
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\Data.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\Data.pdb
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\obj\Debug\Data.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\obj\Debug\Data.pdb
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\Data.dll.config
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\EntityFramework.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\EntityFramework.xml
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Data\bin\Debug\EntityFramework.SqlServer.xml
