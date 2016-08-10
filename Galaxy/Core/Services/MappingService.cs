@@ -1,15 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using Core.DTOModels;
+﻿using Core.DTOModels;
 using Data.Entities;
 
 namespace Core.Services
 {
-    class MappingService
+    public class MappingService
     {
+        public GlobeDtoModel GlobeDataToCore(Globe model)
+        {
+            return new GlobeDtoModel
+            {
+                Id = model.Id,
+                Description = model.Description,
+                Discovered = model.Discovered,
+                Distance = model.Distance,
+                Name = model.Name,
+                TypeOfGlobe = (GlobeTypeDto)model.TypeOfGlobe
+            };
+        }
+
+        public Globe GlobeCoreToData(GlobeDtoModel model)
+        {
+            return new Globe
+            {
+                Id = model.Id,
+                Description = model.Description,
+                Discovered = model.Discovered,
+                Distance = model.Distance,
+                Name = model.Name,
+                TypeOfGlobe = (GlobeType)model.TypeOfGlobe
+            };
+        }
     }
 }

@@ -1,0 +1,4 @@
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Interfaces\bin\Debug\Interfaces.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Interfaces\bin\Debug\Interfaces.pdb
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Interfaces\obj\Debug\Interfaces.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Interfaces\obj\Debug\Interfaces.pdb

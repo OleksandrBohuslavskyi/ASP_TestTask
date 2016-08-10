@@ -1,33 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Core.DTOModels;
-using Data.Interfaces;
+using Interfaces;
 
 namespace Core.Services
 {
-    class DataContextService:IRepository<GlobeDtoModel>
+    public class DataContextService : IRepository<GlobeDtoModel>
     {
         public void Create(GlobeDtoModel model)
         {
-            throw new NotImplementedException();
+            new Data.Repositories.GlobeRepository().Create(new MappingService().GlobeCoreToData(model));
         }
 
         public GlobeDtoModel Read(int id)
         {
-            throw new NotImplementedException();
+            return new MappingService().GlobeDataToCore(new Data.Repositories.GlobeRepository().Read(id));
         }
 
         public void Update(GlobeDtoModel model)
         {
-            throw new NotImplementedException();
+            new Data.Repositories.GlobeRepository().Update(new MappingService().GlobeCoreToData(model));
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            new Data.Repositories.GlobeRepository().Delete(id);
+        }
+
+        public IEnumerable<GlobeDtoModel> GetAll()
+        {
+            return new Data.Repositories.GlobeRepository().GetAll().Select(globe => new MappingService().GlobeDataToCore(globe)).ToList();
         }
     }
 }

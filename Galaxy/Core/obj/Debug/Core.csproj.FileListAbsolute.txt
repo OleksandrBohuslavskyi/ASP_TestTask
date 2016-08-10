@@ -7,3 +7,10 @@ D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\obj\Debug\Core.dll
 D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\obj\Debug\Core.pdb
 D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\EntityFramework.dll
 D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\EntityFramework.xml
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\AutoMapper.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\AutoMapper.xml
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\Core.dll.config
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\Interfaces.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\Core\bin\Debug\Interfaces.pdb

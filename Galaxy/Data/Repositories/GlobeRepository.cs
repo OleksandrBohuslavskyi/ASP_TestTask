@@ -1,7 +1,8 @@
-﻿using System.Data.Entity.Migrations;
+﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using Data.Entities;
-using Data.Interfaces;
+using Interfaces;
 using Data.Сontext;
 
 namespace Data.Repositories
@@ -40,6 +41,14 @@ namespace Data.Repositories
             {
                 context.Globes.Remove(context.Globes.FirstOrDefault(g => g.Id == id));
                 context.SaveChanges();
+            }
+        }
+
+        public IEnumerable<Globe> GetAll()
+        {
+            using (var context = new GalaxyDataBaseContext())
+            {
+                return context.Globes.ToList();
             }
         }
     }

@@ -58,3 +58,7 @@ D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\Data.dll
 D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\EntityFramework.dll
 D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\Data.pdb
 D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\EntityFramework.xml
+D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\EntityFramework.SqlServer.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\EntityFramework.SqlServer.xml
+D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\Interfaces.dll
+D:\GIT\TestProjects\ASP_testTask\Galaxy\UI\bin\Interfaces.pdb
