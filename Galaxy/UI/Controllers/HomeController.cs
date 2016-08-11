@@ -14,46 +14,67 @@ namespace UI.Controllers
 
         public ActionResult ListOfGlobes()
         {
-            var context = new Core.Services.DataContextService();
-
-            return View(context.GetAll().ToList());
+            var context = new Core.Services.DataRepositoryService();
+            return PartialView(context.GetAll().ToList());
         }
 
         public ActionResult Details(int id)
         {
-            return View(new Core.Services.DataContextService().Read(id));
+            return View(new Core.Services.DataRepositoryService().Read(id));
         }
 
         /// <summary>
-        /// NEED TO CREATE better mechanism with check
+        /// NEED TO CREATE better mechanism with check for example ajax modal window
         /// </summary>
         /// <param name="id"></param>
         public void Delete(int id)
         {
-            new Core.Services.DataContextService().Delete(id);
+            new Core.Services.DataRepositoryService().Delete(id);
         }
 
         public ActionResult Create()
         {
-            ViewBag.TypesOfGlobe = Enum.GetNames(typeof(Core.DTOModels.GlobeTypeDto)).ToList();
+            ViewBag.TypesOfGlobe = Enum.GetNames(typeof(GlobeTypeDto)).ToList();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(GlobeDtoModel model)
         {
-            new Core.Services.DataContextService().Create(new Core.DTOModels.GlobeDtoModel()
-            {
-                Description = collection["Description"],
-                Discovered = Convert.ToDateTime(collection["Discovered"]),
-                Distance = Convert.ToDouble(collection["Distance"]),
-                Name = collection["Name"],
-                TypeOfGlobe = (GlobeTypeDto)Enum.Parse(typeof(GlobeTypeDto),collection["typeOfGlobe"])
-            });
-            return RedirectToAction("ListOfGlobes");
 
+            if (ModelState.IsValid)
+            {
+                new Core.Services.DataRepositoryService().Create(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.TypesOfGlobe = Enum.GetNames(typeof(GlobeTypeDto)).ToList();
+                return View(model);
+
+            }
         }
 
+        public ActionResult Edit(int id)
+        {
+            ViewBag.TypesOfGlobe = Enum.GetNames(typeof(GlobeTypeDto)).ToList();
+            return View(new Core.Services.DataRepositoryService().Read(id));
+        }
 
+        [HttpPost]
+        public ActionResult Edit(GlobeDtoModel globe)
+        {
+            if (ModelState.IsValid)
+            {
+                new Core.Services.DataRepositoryService().Update(globe);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.TypesOfGlobe = Enum.GetNames(typeof(GlobeTypeDto)).ToList();
+                return View(globe);
+
+            }
+        }
     }
 }

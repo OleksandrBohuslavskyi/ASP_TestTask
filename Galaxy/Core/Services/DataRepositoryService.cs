@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Core.DTOModels;
 using Interfaces;
 
 namespace Core.Services
 {
-    public class DataContextService : IRepository<GlobeDtoModel>
+    public class DataRepositoryService : IRepository<GlobeDtoModel>
     {
         public void Create(GlobeDtoModel model)
         {

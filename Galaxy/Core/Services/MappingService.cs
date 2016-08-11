@@ -11,7 +11,6 @@ namespace Core.Services
             {
                 Id = model.Id,
                 Description = model.Description,
-                Discovered = model.Discovered,
                 Distance = model.Distance,
                 Name = model.Name,
                 TypeOfGlobe = (GlobeTypeDto)model.TypeOfGlobe
@@ -24,7 +23,6 @@ namespace Core.Services
             {
                 Id = model.Id,
                 Description = model.Description,
-                Discovered = model.Discovered,
                 Distance = model.Distance,
                 Name = model.Name,
                 TypeOfGlobe = (GlobeType)model.TypeOfGlobe

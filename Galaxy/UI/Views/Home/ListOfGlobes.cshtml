@@ -1,55 +1,57 @@
 ﻿@model IEnumerable<Core.DTOModels.GlobeDtoModel>
 
-@{
-    ViewBag.Title = "ListOfGlobes";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+@if (Model.ToList().Count != 0)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create", "Home", new { @class = "btn btn-success" })
+    </p>
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th>@Html.DisplayNameFor(model => model.TypeOfGlobe)</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfGlobe)
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <div class="btn btn-danger" onclick="DeleteGlobe(@item.Id)">Delete</div>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
 }
-
-<h2>ListOfGlobes</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Discovered)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Distance)
-        </th>
-        <th>@Html.DisplayNameFor(model => model.TypeOfGlobe)</th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Discovered)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Distance)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem =>item.TypeOfGlobe)
-        </td>
-        <td>
-            <div class="btn btn-info" onclick="DeleteGlobe(@item.Id)"></div>
-            @Html.ActionLink("Details", "Details", new {id = item.Id})
-        </td>
-    </tr>
+else
+{
+    <div class="jumbotron">
+        <h2>Nothing to show</h2><hr />
+        <h3>You have great opportunity to add new Globe into database!</h3>
+        <h3>It's so exciting. Isn't it?</h3>
+        <p>@Html.ActionLink("Add new Globe", "Create", "Home", new { @class = "btn btn-primary btn-lg" })</p>
+    </div>
 }
-
-</table>
